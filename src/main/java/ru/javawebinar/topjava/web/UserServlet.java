@@ -1,11 +1,22 @@
 package ru.javawebinar.topjava.web;
 
+import org.slf4j.Logger;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UserServlet extends javax.servlet.http.HttpServlet {
+import static org.slf4j.LoggerFactory.getLogger;
 
-    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        //request.getRequestDispatcher("/users.jsp").forward(request, response);
-        response.sendRedirect("users.jsp");
+public class UserServlet extends javax.servlet.http.HttpServlet {
+    private static final Logger log = getLogger(UserServlet.class);
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        log.debug("forward to users");
+        request.getRequestDispatcher("/users.jsp").forward(request, response);
+        log.debug("forward to users");
+        request.getRequestDispatcher("/users.jsp").forward(request, response);
     }
 }
