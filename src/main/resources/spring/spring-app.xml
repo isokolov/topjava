@@ -7,7 +7,7 @@
     <!--
         <bean class="ru.javawebinar.topjava.repository.inmemory.InMemoryUserRepositoryImpl" id="inmemoryUserRepository"/>
         <bean class="ru.javawebinar.topjava.service.UserServiceImpl">
-            <property name="repository" ref="inmemoryUserRepository"/>
+            <property name="repository" ref="inMemoryUserRepository"/>
         </bean>
     -->
 
