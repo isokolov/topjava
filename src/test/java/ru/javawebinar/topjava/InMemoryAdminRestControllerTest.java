@@ -3,7 +3,6 @@ package ru.javawebinar.topjava;
 import org.junit.*;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.javawebinar.topjava.UserTestData;
 import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.repository.inmemory.InMemoryUserRepository;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
@@ -41,8 +40,8 @@ public class InMemoryAdminRestControllerTest {
     public void delete() throws Exception {
         controller.delete(UserTestData.USER_ID);
         Collection<User> users = controller.getAll();
-        Assert.assertEquals(users.size(), 1);
-        Assert.assertEquals(users.iterator().next(), ADMIN);
+        Assert.assertEquals(1, users.size());
+        Assert.assertEquals(ADMIN, users.iterator().next());
     }
 
     @Test(expected = NotFoundException.class)
