@@ -1,11 +1,6 @@
 .idea
-.idea_modules
-idea.bat
 out
 target
-patch
 *.iml
 log
-atlassian-ide-plugin.xml
-
-
+*.patch
